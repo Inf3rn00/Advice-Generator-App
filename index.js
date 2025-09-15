@@ -3,10 +3,10 @@ const adviceText = document.getElementById("advice-text");
 const btn = document.getElementById("btn");
 
 function fetchAdvice() {
-  // Add cache-busting parameter (timestamp)
+  
   const url = `https://api.adviceslip.com/advice?t=${Date.now()}`;
   
-  fetch(url, { cache: 'no-store' })
+  fetch(url)
     .then((response) => {
       if (!response.ok) {
         throw new Error(`HTTP error! Status: ${response.status}`);
